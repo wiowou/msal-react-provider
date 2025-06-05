@@ -5,23 +5,19 @@ import {
   Configuration,
 } from '@azure/msal-browser';
 
-const instances: Record<string, PublicClientApplication> = {};
-
 export function createMsalInstances(
   msalConfigs: Record<string, Configuration>,
 ) {
   for (let key in msalConfigs) {
-    if (instances[key]) continue;
+    if (msalInstances.has(key)) continue;
     const instance = createInstance(msalConfigs[key]);
-    instances[key] = instance;
+    msalInstances.set(key, instance);
   }
 }
 
-export function getMsalInstance(key: string) {
-  return instances[key];
-}
+export const msalInstances = new Map<string, PublicClientApplication>();
 
-function createInstance(msalConfig: Configuration) {
+function createInstance(msalConfig: Configuration): PublicClientApplication {
   /**
    * MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
    * For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md

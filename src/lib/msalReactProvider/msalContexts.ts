@@ -1,10 +1,8 @@
 import * as React from 'react';
 import {
-  IPublicClientApplication,
   stubbedPublicClientApplication,
   Logger,
   InteractionStatus,
-  AccountInfo,
 } from '@azure/msal-browser';
 import { IMsalContext } from '@azure/msal-react';
 import { Consumer } from 'react';

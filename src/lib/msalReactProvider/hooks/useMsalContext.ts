@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { IMsalContext } from '@azure/msal-react';
-import { MsalContexts } from '../msalContext';
+import { MsalContexts } from '../msalContexts';
 
 export function useMsalContext(key: string): IMsalContext {
   const context = MsalContexts.get(key);
