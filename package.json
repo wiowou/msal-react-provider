@@ -1,0 +1,47 @@
+{
+  "name": "my-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:js && npm run build:types && npm run build:css && npm run build:package.json",
+    "build:js": "node esbuild.mjs",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "build:css": "tailwindcss -i ./css/input.css -o ./dist/style.css",
+    "build:package.json": "cp package.json ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./styles": {
+      "import": "./style.css"
+    },
+    "./msal-react-provider": {
+      "require": "./lib/MSALReactProvider/index.js",
+      "import": "./lib/MSALReactProvider/index.js",
+      "types": "./lib/MSALReactProvider/index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^4.13.0",
+    "@azure/msal-react": "^3.0.12",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "esbuild": "^0.24.2",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.0"
+  }
+}
