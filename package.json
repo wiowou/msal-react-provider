@@ -1,7 +1,7 @@
 {
-  "name": "my-component",
+  "name": "msal-react-provider",
   "version": "1.0.0",
-  "description": "",
+  "description": "simplified usage of msal provider in react projects suitable for common use cases",
   "main": "index.js",
   "scripts": {
     "build": "npm run build:js && npm run build:types && npm run build:css && npm run build:package.json",

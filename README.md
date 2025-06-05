@@ -1,1 +1,1 @@
-# react-component-template
+# msal react provider
