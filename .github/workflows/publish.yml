@@ -23,4 +23,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: npm ci
       - run: npm run build
-      - run: npm publish --access public --tag next
+      - run: npm publish --access public
