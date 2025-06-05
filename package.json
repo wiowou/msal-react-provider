@@ -1,6 +1,6 @@
 {
   "name": "msal-react-provider",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "simplified usage of msal provider in react projects suitable for common use cases",
   "main": "index.js",
   "scripts": {
