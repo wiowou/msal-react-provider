@@ -1,8 +1,8 @@
 {
   "name": "@bippo-libs/msal-react-provider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simplified usage of msal provider in react projects suitable for common use cases",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "npm run build:js && npm run build:types && npm run build:css && npm run build:package.json",
     "build:js": "node esbuild.mjs",
@@ -15,19 +15,13 @@
   "license": "Apache-2.0",
   "exports": {
     ".": {
-      "require": "./index.js",
-      "import": "./index.js",
-      "types": "./index.d.ts"
-    },
-    "./styles": {
-      "import": "./style.css"
-    },
-    "./msal-react-provider": {
-      "require": "./lib/MSALReactProvider/index.js",
-      "import": "./lib/MSALReactProvider/index.js",
-      "types": "./lib/MSALReactProvider/index.d.ts"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "@azure/msal-browser": "^4.13.0",
     "@azure/msal-react": "^3.0.12",
