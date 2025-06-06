@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 import { IMsalContext } from '@azure/msal-react';
 import { MsalContexts } from '../msalContexts';

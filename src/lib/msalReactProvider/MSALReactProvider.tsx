@@ -18,8 +18,12 @@ export function MSALReactProvider({
   // Nest MsalProviders hierarchically, children is innermost
   let nestedProviders = children;
   for (let key in msalConfigs) {
+    const instance = msalInstances.get(key);
+    if (!instance) {
+      throw new Error(`MSAL instance for key "${key}" not found.`);
+    }
     nestedProviders = (
-      <MsalProvider instance={msalInstances[key]} key={key}>
+      <MsalProvider instance={instance} key={key}>
         {nestedProviders}
       </MsalProvider>
     );

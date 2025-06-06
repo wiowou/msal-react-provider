@@ -1,6 +1,6 @@
 {
   "name": "@bippo-libs/msal-react-provider",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simplified msal provider in react projects suitable for common use cases",
   "main": "./dist/index.js",
   "scripts": {
@@ -21,6 +21,11 @@
     }
   },
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "package.json"
+  ],
   "dependencies": {
     "@azure/msal-browser": "^4.13.0",
     "@azure/msal-react": "^3.0.12",
@@ -28,6 +33,7 @@
     "@types/react-dom": "^19.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tslib": "^2.8.1",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
