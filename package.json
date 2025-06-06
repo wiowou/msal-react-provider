@@ -1,6 +1,6 @@
 {
   "name": "@bippo-libs/msal-react-provider",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simplified msal provider in react projects suitable for common use cases",
   "main": "./dist/index.js",
   "scripts": {

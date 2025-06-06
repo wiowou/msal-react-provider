@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { MsalProvider } from '@azure/msal-react';
 import { Configuration } from '@azure/msal-browser';
 
@@ -12,7 +12,7 @@ export interface MSALReactProviderProps {
 export function MSALReactProvider({
   msalConfigs,
   children,
-}: React.PropsWithChildren<MSALReactProviderProps>): React.ReactElement {
+}: PropsWithChildren<MSALReactProviderProps>) {
   createMsalInstances(msalConfigs);
   createMsalContexts(new Set(Object.keys(msalConfigs)));
   // Nest MsalProviders hierarchically, children is innermost
