@@ -16,7 +16,7 @@ export function MSALReactProvider({
   createMsalInstances(msalConfigs);
   createMsalContexts(new Set(Object.keys(msalConfigs)));
   // Nest MsalProviders hierarchically, children is innermost
-  let nestedProviders = children;
+  let nestedProviders = <>{children}</>;
   for (let key in msalConfigs) {
     const instance = msalInstances.get(key);
     if (!instance) {
