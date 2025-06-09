@@ -15,8 +15,7 @@ export function MSALReactProvider({
 }: PropsWithChildren<MSALReactProviderProps>) {
   createMsalInstances(msalConfigs);
   return (
-    <MsalProvider instance={msalInstances.get(Object.keys(msalConfigs)[0]) ?? defaultPublicClientApplication}>
-      {children}
+    <MsalProvider instance={msalInstances.get(Object.keys(msalConfigs)[0]) ?? defaultPublicClientApplication} children={children}>
     </MsalProvider>
   )
   // createMsalContexts(new Set(Object.keys(msalConfigs)));
